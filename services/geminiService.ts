@@ -16,7 +16,7 @@ export const generateAdMockup = async (
 ): Promise<Omit<GeneratedAdContent, 'id'>> => {
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash-image-preview',
+      model: 'gemini-2.5-flash-image',
       contents: {
         parts: [
           {
@@ -31,13 +31,10 @@ export const generateAdMockup = async (
         ],
       },
       config: {
-        responseModalities: [Modality.IMAGE, Modality.TEXT],
+        responseModalities: [Modality.IMAGE],
       },
     });
 
-    // FIX: The original code had a type error because `GeneratedAdContent` requires an `id`, but this object is initialized without one.
-    // The `id` is correctly added in `App.tsx` after this function returns.
-    // To resolve this, the type for `adContent` and the function's return type are changed to `Omit<GeneratedAdContent, 'id'>`.
     const adContent: Omit<GeneratedAdContent, 'id'> = {
       imageUrl: null,
       text: null,
