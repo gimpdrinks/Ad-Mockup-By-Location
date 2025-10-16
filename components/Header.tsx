@@ -9,10 +9,10 @@ const Header: React.FC = () => {
         className="h-16 mx-auto mb-4"
       />
       <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-500">
-        AI Ad Mockup Generator
+        Ad Scene Mockup Generator
       </h1>
       <p className="mt-2 text-lg text-slate-400">
-        Turn your product photos into stunning, realistic ads in seconds.
+        See your ads in the wild, before they go live.
       </p>
     </header>
   );
